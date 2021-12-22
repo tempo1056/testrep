@@ -24,13 +24,13 @@ function light_control(name, device_in, control_in, device_out, control_out) {
 					dev[device_out][control_out] = 1;
                   	dev[name]["switch_fb"] = 1;
 				} else {
-					dev[device_out][control_out] = 0;
-                  	dev[name]["switch_fb"] = 0;
+					dev[device_out][control_out] = 1;
+                  	dev[name]["switch_fb"] = 1;
 				}
 			}
 		}
 	});
-
+//changed
 	defineRule(name + "_switch_control_iridium", {
 		whenChanged: name + "/TOGGLE_switch",
 		then: function (newValue, devName, cellName) {
